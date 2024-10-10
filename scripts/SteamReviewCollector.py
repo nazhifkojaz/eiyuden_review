@@ -1,3 +1,4 @@
+import os
 import requests
 import time
 import urllib.parse
@@ -48,9 +49,29 @@ class SteamReviewCollector:
         return review_list
 
     def save_to_csv(self):
-        filename = f"data/reviews_{datetime.now().strftime('%Y-%m-%d')}.csv"
-        self.collected_data.to_csv(filename, index=False)
-        logging.info(f"Data saved to {filename}")
+        # find the latest file and rename it to reviews_old_<current-date>.csv and save the current data to reviews_latest.csv
+        latest_filename = "data/reviews_latest.csv"
+        current_date = datetime.now().strftime('%Y-%m-%d')
+        old_filename = f"data/reviews_old_{current_date}.csv"
+        
+        if os.path.exists(latest_filename):
+            os.rename(latest_filename, old_filename)
+            logging.info(f"Renamed latest file to {old_filename}")
+        
+        self.collected_data.to_csv(latest_filename, index=False)
+        logging.info(f"Data saved to {latest_filename}")
+
+        self.manage_old_reviews("data/")
+
+    def manage_old_reviews(directory):
+        # keep only the 3 most recent files (since I don't think keeping more than 3 is necessary)
+        old_reviews = [f for f in os.listdir(directory) if f.startswith("reviews_old_")]
+        old_reviews.sort(key=lambda x: os.path.getmtime(os.path.join(directory, x)))
+
+        while len(old_reviews) > 3:
+            file_to_delete = old_reviews.pop(0)  # Remove the oldest
+            os.remove(os.path.join(directory, file_to_delete))
+            logging.info(f"Deleted old review file: {file_to_delete}")
 
     def run(self):
         while True:
