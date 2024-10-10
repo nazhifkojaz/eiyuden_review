@@ -20,7 +20,10 @@ class SteamReviewCollector:
         self.collected_data = pd.DataFrame()
 
     def fetch_reviews(self):
-        url = f"https://store.steampowered.com/appreviews/{self.app_id}?filter=recent&language=all&purchase_type=all&num_per_page=100&filter_offtopic_activity=0&json=1&cursor={urllib.parse.quote(self.next_cursor)}"
+        if self.next_cursor == "":
+            url = f"https://store.steampowered.com/appreviews/{self.app_id}?filter=recent&language=all&purchase_type=all&num_per_page=100&filter_offtopic_activity=0&json=1"
+        else:
+            url = f"https://store.steampowered.com/appreviews/{self.app_id}?filter=recent&language=all&purchase_type=all&num_per_page=100&filter_offtopic_activity=0&json=1&cursor={urllib.parse.quote(self.next_cursor)}"
         response = requests.get(url)
         
         if response.status_code == 200:
