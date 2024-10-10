@@ -1,0 +1,45 @@
+name: Steam Reviews Data Collection
+
+on:
+  schedule:
+    # Runs at 00:00 on the 1st of every month
+    - cron: '0 0 1 * *'
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  collect_reviews:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python using Poetry
+      - name: Set up Poetry
+        uses: snok/install-poetry@v1.8.3
+        with:
+          version: 'latest'  # You can specify a specific version if needed
+          virtualenvs-in-project: true
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          poetry install --no-root
+
+      # Step 4: Run the data collection script
+      - name: Run Steam review collector
+        run: poetry run python scripts/SteamReviewCollector.py
+
+      # Step 5: Commit the new data file
+      - name: Commit new data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/*.csv
+          git commit -m "Fetch new Steam reviews data on $(date +'%Y-%m-%d')"
+
+      # Step 6: Push changes to the repository
+      - name: Push changes
+        run: |
+          git push origin HEAD:main
