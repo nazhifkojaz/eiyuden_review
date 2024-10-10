@@ -36,7 +36,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add data/*.csv
+          git add data/*.csv data/steam_review_collector.log
           git commit -m "Fetch new Steam reviews data on $(date +'%Y-%m-%d')"
 
       # Step 6: Push changes to the repository
