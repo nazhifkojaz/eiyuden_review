@@ -1,2 +1,36 @@
 2024-10-10 08:13:56,670 - INFO - No more reviews to collect.
 2024-10-10 08:13:56,670 - WARNING - No data collected, something went wrong.
+2024-10-10 08:19:21,766 - INFO - Number of reviews collected: 100
+2024-10-10 08:19:22,997 - INFO - Number of reviews collected: 200
+2024-10-10 08:19:24,314 - INFO - Number of reviews collected: 300
+2024-10-10 08:19:25,626 - INFO - Number of reviews collected: 400
+2024-10-10 08:19:27,034 - INFO - Number of reviews collected: 500
+2024-10-10 08:19:28,454 - INFO - Number of reviews collected: 600
+2024-10-10 08:19:29,784 - INFO - Number of reviews collected: 700
+2024-10-10 08:19:31,130 - INFO - Number of reviews collected: 800
+2024-10-10 08:19:32,439 - INFO - Number of reviews collected: 900
+2024-10-10 08:19:33,721 - INFO - Number of reviews collected: 1000
+2024-10-10 08:19:35,546 - INFO - Number of reviews collected: 1100
+2024-10-10 08:19:36,994 - INFO - Number of reviews collected: 1200
+2024-10-10 08:19:38,416 - INFO - Number of reviews collected: 1300
+2024-10-10 08:19:39,850 - INFO - Number of reviews collected: 1400
+2024-10-10 08:19:41,158 - INFO - Number of reviews collected: 1500
+2024-10-10 08:19:42,502 - INFO - Number of reviews collected: 1600
+2024-10-10 08:19:43,804 - INFO - Number of reviews collected: 1700
+2024-10-10 08:19:45,366 - INFO - Number of reviews collected: 1800
+2024-10-10 08:19:47,191 - INFO - Number of reviews collected: 1900
+2024-10-10 08:19:48,533 - INFO - Number of reviews collected: 2000
+2024-10-10 08:19:49,833 - INFO - Number of reviews collected: 2100
+2024-10-10 08:19:51,053 - INFO - Number of reviews collected: 2200
+2024-10-10 08:19:52,371 - INFO - Number of reviews collected: 2300
+2024-10-10 08:19:53,690 - INFO - Number of reviews collected: 2400
+2024-10-10 08:19:54,983 - INFO - Number of reviews collected: 2500
+2024-10-10 08:19:56,280 - INFO - Number of reviews collected: 2600
+2024-10-10 08:19:57,640 - INFO - Number of reviews collected: 2700
+2024-10-10 08:19:58,902 - INFO - Number of reviews collected: 2800
+2024-10-10 08:20:00,216 - INFO - Number of reviews collected: 2900
+2024-10-10 08:20:01,584 - INFO - Number of reviews collected: 3000
+2024-10-10 08:20:03,007 - INFO - Number of reviews collected: 3100
+2024-10-10 08:20:04,234 - INFO - Number of reviews collected: 3155
+2024-10-10 08:20:05,380 - INFO - No more reviews to collect.
+2024-10-10 08:20:05,420 - INFO - Data saved to data/reviews_2024-10-10.csv
