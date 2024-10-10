@@ -17,7 +17,7 @@ jobs:
 
       # Step 2: Set up Python using Poetry
       - name: Set up Poetry
-        uses: snok/install-poetry@v1.8.3
+        uses: snok/install-poetry@latest
         with:
           version: 'latest'  # You can specify a specific version if needed
           virtualenvs-in-project: true
