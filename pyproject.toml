@@ -10,6 +10,7 @@ python = "^3.11"
 pandas = "^2.2.3"
 seaborn = "^0.13.2"
 requests = "^2.32.3"
+logging = "^0.4.9.6"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -756,6 +756,16 @@ files = [
 ]
 
 [[package]]
+name = "logging"
+version = "0.4.9.6"
+description = "A logging module for Python"
+optional = false
+python-versions = "*"
+files = [
+    {file = "logging-0.4.9.6.tar.gz", hash = "sha256:26f6b50773f085042d301085bd1bf5d9f3735704db9f37c1ce6d8b85c38f2417"},
+]
+
+[[package]]
 name = "matplotlib"
 version = "3.9.2"
 description = "Python plotting package"
@@ -1583,4 +1593,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "51d61b1f82d6c5989067bc358c436a249cc9759fb4886c7c6d54f0ca1752b7ea"
+content-hash = "03a0a19881d2a76f8fd9ccf86975647daa97e81bd6761ea27cf36208775123a8"
