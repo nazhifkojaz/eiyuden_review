@@ -49,12 +49,19 @@ class SteamReviewCollector:
         return review_list
 
     def save_to_csv(self):
-        # find the latest file and rename it to reviews_old_<current-date>.csv and save the current data to reviews_latest.csv
+        # Find the latest file and rename it to reviews_old_<current-date>.csv
         latest_filename = "data/reviews_latest.csv"
         current_date = datetime.now().strftime('%Y-%m-%d')
         old_filename = f"data/reviews_old_{current_date}.csv"
         
         if os.path.exists(latest_filename):
+            if os.path.exists(old_filename):
+                # If the file exists, append a counter to make it unique
+                counter = 1
+                while os.path.exists(old_filename):
+                    old_filename = f"data/reviews_old_{current_date}_{counter}.csv"
+                    counter += 1
+
             os.rename(latest_filename, old_filename)
             logging.info(f"Renamed latest file to {old_filename}")
         
@@ -63,7 +70,7 @@ class SteamReviewCollector:
 
         self.manage_old_reviews("data/")
 
-    def manage_old_reviews(directory):
+    def manage_old_reviews(self, directory):
         # keep only the 3 most recent files (since I don't think keeping more than 3 is necessary)
         old_reviews = [f for f in os.listdir(directory) if f.startswith("reviews_old_")]
         old_reviews.sort(key=lambda x: os.path.getmtime(os.path.join(directory, x)))
