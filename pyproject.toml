@@ -12,6 +12,8 @@ seaborn = "^0.13.2"
 requests = "^2.32.3"
 logging = "^0.4.9.6"
 pytest-mock = "^3.14.0"
+beautifulsoup4 = "^4.13.4"
+lxml = "^5.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
