@@ -18,6 +18,8 @@ gameinsights = {git = "https://github.com/nazhifkojaz/steam-game-data-collector.
 python-dotenv = "^1.1.1"
 pyarrow = "^21.0.0"
 fastparquet = "^2024.11.0"
+scipy = "^1.16.1"
+scikit-learn = "^1.7.1"
 
 
 [tool.poetry.group.dev.dependencies]
